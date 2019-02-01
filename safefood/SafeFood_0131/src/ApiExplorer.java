@@ -7,11 +7,11 @@ import java.io.IOException;
 
 public class ApiExplorer {
     public static void main(String[] args) throws IOException {
-        StringBuilder urlBuilder = new StringBuilder("http://apis.data.go.kr/1470000/FoodNtrIrdntInfoService/getFoodNtrItdntList"); /*URL*/
-        urlBuilder.append("?" + URLEncoder.encode("ServiceKey","UTF-8") + "=VhV%2BKsNjBo0fEzXZKe%2Bvg%2B5ma5V6yRBggE7g%2BeUGz0SrYsZ%2FvVr7Kv70RHPzPJGqga%2Fk0DerMNhOzmPbSdd57g%3D%3D"); /*Service Key*/
-        urlBuilder.append("&" + URLEncoder.encode("desc_kor","UTF-8") + "=" + URLEncoder.encode("리챔오리지널", "UTF-8")); /*식품이름*/
+        StringBuilder urlBuilder = new StringBuilder("http://apis.data.go.kr/B553748/CertImgListService/getCertImgListService"); /*URL*/
+        urlBuilder.append("?" + URLEncoder.encode("ServiceKey","UTF-8") + "=NYKxCjSMfb3OrHOeBxC%2BX6825AJ6jBOYiYXaIrf4i3yjME8xXllNxFn6F6JHOeoxUxsQB8Uz3oDkDLr%2B2t%2F3NA%3D%3D"); /*Service Key*/
+        urlBuilder.append("&" + URLEncoder.encode("prdlstNm","UTF-8") + "=" + URLEncoder.encode("투게더", "UTF-8")); /*식품이름*/
         urlBuilder.append("&" + URLEncoder.encode("pageNo","UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); /*페이지번호*/
-        urlBuilder.append("&" + URLEncoder.encode("numOfRows","UTF-8") + "=" + URLEncoder.encode("3", "UTF-8")); /*한 페이지 결과 수*/
+        urlBuilder.append("&" + URLEncoder.encode("numOfRows","UTF-8") + "=" + URLEncoder.encode("10", "UTF-8")); /*한 페이지 결과 수*/
 //        urlBuilder.append("&" + URLEncoder.encode("bgn_year","UTF-8") + "=" + URLEncoder.encode("2017", "UTF-8")); /*구축년도*/
 //        urlBuilder.append("&" + URLEncoder.encode("animal_plant","UTF-8") + "=" + URLEncoder.encode("(유)돌코리아", "UTF-8")); /*가공업체*/
         URL url = new URL(urlBuilder.toString());
@@ -28,6 +28,7 @@ public class ApiExplorer {
         StringBuilder sb = new StringBuilder();
         String line;
         while ((line = rd.readLine()) != null) {
+        	sb.append("\n");
             sb.append(line);
         }
         rd.close();
