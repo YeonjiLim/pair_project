@@ -42,10 +42,10 @@ public class FoodSaxParser {
 					food.setName(find.getName());
 					food.setMaker(find.getMaker());
 					food.setMaterial(find.getMaterial());
+					food.setAllergy(find.getAllergy());
 					food.setImg(find.getImg());
 				}
 			}
-			System.out.println(foods);
 		}catch(Exception e){
 			e.printStackTrace();
 		}

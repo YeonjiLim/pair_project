@@ -38,6 +38,8 @@ public class FoodSAXHandler extends DefaultHandler {
 			food.setMaterial(temp);
 		}else if(qName.equals("image")) { 
 			food.setImg(temp);
+		}else if(qName.equals("allergy")){
+			food.setAllergy(temp);
 		}else if(qName.equals("food")) { 
 			foods.put(food.getName(), food);
 		}

@@ -24,8 +24,9 @@ public class FoodDaoImpl implements FoodDao{
 	 * 식품 영양학 정보와 식품 정보를  xml 파일에서 읽어온다.
 	 */
 	public void loadData() {
-		foods = new FoodSaxParser().getFoods();
+		foods = new FoodSaxParser().getFoods();//  FoodNutritionSaxPaser를 이용하여 Food 데이터들을 가져온다
 	}
+	
 	
 	/**
 	 * 검색 조건(key) 검색 단어(word)에 해당하는 식품 정보(Food)의 개수를 반환. 
@@ -56,14 +57,14 @@ public class FoodDaoImpl implements FoodDao{
 							finds.add(food);
 						}
 					}
-				}else if(key.equals("maker")) {
-					for (Food food : foods) {
-						if(food.getMaker().contains(word)) {
+				} else if(key.equals("maker")) { //제조사 검색  구현
+					for(Food food : foods) {
+						if(food.getMaker().contains(word)){
 							finds.add(food);
 						}
 					}
-				}else if(key.equals("material")) {
-					for (Food food : foods) {
+				} else if(key.equals("material")) { // 원재료 검색 구현
+					for(Food food : foods) {
 						if(food.getMaterial().contains(word)) {
 							finds.add(food);
 						}
@@ -84,12 +85,13 @@ public class FoodDaoImpl implements FoodDao{
 	 * @return	식품 코드에 해당하는 식품 정보, 없으면 null이 리턴됨
 	 */
 	public Food search(int code) {
-		for (Food food : foods) {
-			if(food.getCode() ==code) {
-				return food;
+		Food f = null;
+		for(Food food : foods) { // 코드에 맞는 식품 검색하여 리턴
+			if(food.getCode() == code) {
+				f = food;
 			}
-		}
-		return null;
+		}		
+		return f;
 	}
 
 	/**
@@ -105,5 +107,9 @@ public class FoodDaoImpl implements FoodDao{
 		return null;
 	}
 	
-	
+	public static void print(List<Food> foods) {
+		for (Food food : foods) {
+			System.out.println(food);
+		}
+	}
 }

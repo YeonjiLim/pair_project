@@ -6,9 +6,9 @@ public class Food {
 	protected int code;
 	/**식품 이름*/
 	protected String name;
-	/**일회 제공 량*/
+	/**일회 제공량*/
 	protected double supportpereat;
-	/**일회 제공되는 칼로기*/
+	/**일회 제공되는 칼로리*/
 	protected double calory;
 	/**일회 제공되는 탄수화물*/
 	protected double carbo;
@@ -136,12 +136,11 @@ public class Food {
 	public void setAllergy(String allergy) {
 		this.allergy = allergy;
 	}
+	
 	@Override
 	public String toString() {
-		return "Food [code=" + code + ", name=" + name + ", supportpereat=" + supportpereat + ", calory=" + calory
-				+ ", carbo=" + carbo + ", protein=" + protein + ", fat=" + fat + ", sugar=" + sugar + ", natrium="
-				+ natrium + ", chole=" + chole + ", fattyacid=" + fattyacid + ", transfat=" + transfat + ", maker="
-				+ maker + ", material=" + material + ", img=" + img + "]";
+		return "제품코드:" + code + ", 제품명:" + name + ", 1회 제공량:" + supportpereat + ", 칼로리:" + calory + ", 탄수화물:" + carbo + ", 단백질:" + protein + ", 지방:" + fat + ", 당류:" + sugar + ", 나트륨:"
+				+ natrium + ", 콜레스테롤:" + chole + ", 포화지방산:" + fattyacid + ", 트랜스지방:" + transfat + ", 제조사:" + maker + ", 원재료:" + material + ", 알러지발생가능원료:" + allergy;
 	}
 	
 }

@@ -22,8 +22,7 @@ public class FoodNutritionSAXHandler extends DefaultHandler {
 	public FoodNutritionSAXHandler(){
 		list = new LinkedList<Food>();
 	}
-	public void startElement(String uri, String localName
-			                           , String qName, Attributes att ){
+	public void startElement(String uri, String localName, String qName, Attributes att ){
 		if(qName.equals("item")){
 			food = new Food();
 		}
